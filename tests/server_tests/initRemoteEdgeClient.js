@@ -1,7 +1,7 @@
 var config        = require('../../config/Config');
 console.log('Trying to init first Beame remote edgeClient');
 if(config.InitFirstRemoteEdgeClient){
-	config.rootDirIndex = config.beameStoreNdxRoot;
+	config.rootDirIndex = config.beameStoreNdxHome;
 	var beameSdkDir = config.npmRootDir+"/lib/node_modules/beame-sdk";
 
 	var servers = require(beameSdkDir+"/src/cli/servers");
@@ -10,7 +10,7 @@ if(config.InitFirstRemoteEdgeClient){
 	var atoms         = creds.list("atom", "", "JSON");
 	var edgeclients   = creds.list("edgeclient", "", "JSON");
 	var remoteclients = creds.list("remoteclient", "", "JSON");
-	if ((remoteclients.length > 0) || (atoms.length > 0) || (edgeclients.length > 0)){
+	if (0){//(remoteclients.length > 0) || (atoms.length > 0) || (edgeclients.length > 0)){
 		console.log('beame credentials found, initializing FIRST client aborted');
 	}
 	else{
